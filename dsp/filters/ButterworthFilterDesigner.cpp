@@ -6,6 +6,7 @@
 #include "ButterworthFilterDesigner.h"
 #include "DspFilter.h"
 #include "BiquadFilter.h"
+#include <rack.hpp>
 #include <memory>
 
 

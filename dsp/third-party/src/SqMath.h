@@ -3,7 +3,7 @@
 #include "rack.hpp"
 #if ARCH_ARM64
 #include "arm_intrinsics_sub.h"
-#else
+#elif !defined(METAMODULE)
 #include <immintrin.h>
 #endif
 #include <random>

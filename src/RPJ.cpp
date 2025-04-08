@@ -18,8 +18,12 @@ void init(Plugin *p) {
 	p->addModel(modelGaza);
 	p->addModel(modelCircularRide);
 	p->addModel(modelDrillingHoles);
+    #ifndef METAMODULE
 	p->addModel(modelTuxOn);
+    #endif
     p->addModel(modelPigeonPlink);
     p->addModel(modelGenie);
+    #ifndef METAMODULE
     p->addModel(modelGenieExpander);
+    #endif
 }

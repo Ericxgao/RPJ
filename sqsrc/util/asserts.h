@@ -14,9 +14,9 @@ extern int _mdb;        // MIDI reverence count
  * defined for non-debug
  *
  */
-inline bool isMask(float_4 m)
+inline bool isMask(rack::simd::float_4 m)
 {
-    float_4 nm = ~m;
+    rack::simd::float_4 nm = ~m;
     return (
         (m[0]==0 || nm[0]==0) && 
         (m[1]==0 || nm[1]==0) && 

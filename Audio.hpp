@@ -1,6 +1,3 @@
-#include "rack.hpp"
-#include "dep/dr_wav.h"
-#include "dep/dr_flac.h"
 #include "dep/dr_mp3.h"
 
 using namespace std;

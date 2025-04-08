@@ -6,11 +6,13 @@
 #include "../composites/WidgetComposite.h"
 
 #include "PigeonPlink.hpp"
-#include "ctrl/SqWidgets.h"
 #include "ctrl/RPJKnobs.hpp"
 #include "ctrl/SqHelper.h"
+#ifndef METAMODULE
+#include "ctrl/SqWidgets.h"
 #include "ctrl/SqMenuItem.h"
 #include "ctrl/PopupMenuParamWidget.h"
+#endif
 #include "ctrl/RPJButtons.hpp"
 
 using Comp = WVCO<WidgetComposite>;
@@ -376,10 +378,12 @@ void PigeonPlinkModule::onAdd(const rack::engine::Module::AddEvent& e) {
 	    json_error_t error;
 	    json_t* rootJ = json_loadf(file, 0, &error);
         
+        #ifndef METAMODULE
 	    if (!rootJ) {
 	        throw Exception("Failed to load config. JSON parsing error at %s %d:%d %s", error.source, error.line, error.column, error.text);
             fclose(file);
         }
+        #endif
         steppingTxt = {};
         wvco->R = {};
         json_t *nSteppingJ = json_object_get(rootJ, "steppings");
@@ -443,6 +447,7 @@ struct PigeonPlinkWidget : ModuleWidget
 
 void PigeonPlinkWidget::appendContextMenu(Menu *menu)
 {
+    #ifndef METAMODULE
     MenuLabel *spacerLabel = new MenuLabel();
 	menu->addChild(spacerLabel);
     
@@ -455,6 +460,7 @@ void PigeonPlinkWidget::appendContextMenu(Menu *menu)
         item->text = "Hookup Modulator";
         menu->addChild(item);
     }
+    #endif
 }
 
 const float dispX1 = 138;

@@ -10,7 +10,7 @@
  * so can be used for anything
  **/
 struct SqMenuItem : ::rack::MenuItem {
-    void onAction(const ::rack::event::Action& e) override {
+    void onAction(const ::rack::widget::Widget::ActionEvent& e) override {
         _onActionFn();
     }
 
@@ -37,7 +37,7 @@ private:
 };
 
 struct SqMenuItemAccel : ::rack::MenuItem {
-    void onAction(const ::rack::event::Action& e) override {
+    void onAction(const ::rack::widget::Widget::ActionEvent& e) override {
         _onActionFn();
     }
 

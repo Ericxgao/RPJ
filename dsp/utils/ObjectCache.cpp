@@ -284,5 +284,5 @@ template class ObjectCache<float>;
 
 
 // we don't want to do the entire object cache in simd, but we do need this:
-template std::shared_ptr<BiquadParams<float_4, 3>>  ObjectCache<float_4>::get6PLPParams(float normalizedFc);
+template std::shared_ptr<BiquadParams<rack::simd::float_4, 3>>  ObjectCache<rack::simd::float_4>::get6PLPParams(float normalizedFc);
 
