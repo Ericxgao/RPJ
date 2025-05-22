@@ -94,7 +94,7 @@ void Genie::doPendulum(const ProcessArgs & args) {
 
 		outputs[OUTPUT_1_X+2*n].setVoltage((edges[n][0].first)+5*uni);
 		outputs[OUTPUT_1_Y+2*n].setVoltage((edges[n][0].second)+5*uni);
-		outputs[OUTPUT_1_EDGE+2*n].setVoltage((st[n].theta.first/18.0f));
+		outputs[OUTPUT_1_EDGE+n].setVoltage((st[n].theta.first/18.0f));
 		
 		#ifndef METAMODULE
 		bool expanderPresent = (rightExpander.module && rightExpander.module->model == modelGenieExpander);
